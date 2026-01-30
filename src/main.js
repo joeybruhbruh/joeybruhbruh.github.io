@@ -1,8 +1,8 @@
-import { animate, inView, stagger } from 'motion';
+import { animate, inView, stagger } from 'https://cdn.jsdelivr.net/npm/motion@12.29.2/+esm';
 
 // Hero Animations
 animate(
-    ".greeting, .name, .title, .social-links, .hero-actions",
+    '.greeting, .name, .title, .social-links, .hero-actions',
     { opacity: [0, 1], x: [-50, 0] },
     { delay: stagger(0.2), duration: 0.8 },
 );
@@ -32,7 +32,7 @@ inView('.services-grid', (info) => {
 
 // About Me Animation
 inView('.about-content', (info) => {
-    // Uses global selectors, but scoping to be safe if desired. 
+    // Uses global selectors, but scoping to be safe if desired.
     // Currently relying on global class names as per original code.
     animate('.about-image', { opacity: [0, 1], x: [-50, 0] }, { duration: 0.8 });
     animate('.about-text', { opacity: [0, 1], x: [50, 0] }, { duration: 0.8, delay: 0.2 });
