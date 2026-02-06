@@ -1,0 +1,266 @@
+:root {
+    --apple-blue: #0071e3;
+    --apple-blue-hover: #0077ed;
+    --bg-color: #f5f5f7;
+    --card-bg: #ffffff;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --border-color: #d2d2d7;
+    --danger-color: #ff3b30;
+    --warning-color: #ff9f0a;
+    --radius-l: 18px;
+    --radius-m: 12px;
+    --radius-s: 8px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.003em;
+    /* margin-bottom: 10px; */
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 17px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Form Styles */
+.form-container {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--radius-l);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+}
+
+#student-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.form-group {
+    flex: 1 1 30%; /* Default to 3 columns */
+    min-width: 250px;
+    margin-bottom: 0;
+}
+
+/* Specific layout adjustments using nth-child to mimic previous grid structure without grid */
+/* ID and Name on the first row */
+.form-group:nth-of-type(2), /* ID */
+.form-group:nth-of-type(3)  /* Name */
+{
+    flex: 1 1 45%;
+}
+
+/* DOB, Class, GPA on the second row */
+.form-group:nth-of-type(4), /* DOB */
+.form-group:nth-of-type(5), /* Class */
+.form-group:nth-of-type(6)  /* GPA */
+{
+    flex: 1 1 30%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 17px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-m);
+    background-color: transparent;
+    transition: all 0.2s ease;
+    color: var(--text-primary);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--apple-blue);
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
+}
+
+.button-group {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 980px; /* Pill shape */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#submit-btn {
+    background-color: var(--apple-blue);
+    color: white;
+}
+
+#submit-btn:hover {
+    background-color: var(--apple-blue-hover);
+    transform: scale(1.02);
+}
+
+#cancel-btn {
+    background-color: rgba(0,0,0,0.05);
+    color: var(--text-primary);
+}
+
+#cancel-btn:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* List/Table Styles */
+.list-container {
+    background: var(--card-bg);
+    border-radius: var(--radius-l);
+    padding: 30px; /* Reduced padding */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    overflow: hidden; /* Contains the table radius */
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 10px;
+}
+
+th {
+    text-align: left;
+    padding: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+td {
+    padding: 16px;
+    font-size: 15px;
+    color: var(--text-primary);
+    border-bottom: 1px solid #eeeeee;
+}
+
+th:last-child, td:last-child {
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #fafafa;
+}
+
+/* Action Buttons in Table */
+.action-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 980px;
+    margin-right: 6px;
+}
+
+.edit-btn {
+    background-color: rgba(0, 113, 227, 0.1);
+    color: var(--apple-blue);
+}
+
+.edit-btn:hover {
+    background-color: rgba(0, 113, 227, 0.2);
+}
+
+.delete-btn {
+    background-color: rgba(255, 59, 48, 0.1);
+    color: var(--danger-color);
+}
+
+.delete-btn:hover {
+    background-color: rgba(255, 59, 48, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+    
+    #student-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-wrapper {
+        gap: 20px;
+    }
+
+    .form-container, .list-container {
+        padding: 20px;
+    }
+    
+            table {
+    
+                display: block;
+    
+                overflow-x: auto;
+    
+            }
+    
+        }
+    
+        
+    
+    
