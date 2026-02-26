@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --orange-normal: #fd6f00;
     --white-dark-hover: #959595;
